@@ -315,6 +315,9 @@ end)
 autocmd.subscribe('CursorMoved', function()
   if config.enabled() then
     cmp.core:on_moved()
+  else
+    cmp.core:reset()
+    cmp.core.view:close()
   end
 end)
 
